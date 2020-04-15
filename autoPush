@@ -1,0 +1,20 @@
+#!bin/bash
+
+#programa simples que faz o processo de add, commit e push2master.
+
+printf "Executando $0 \n";
+echo -e "esse é o estado do seu repositório.\n";
+git status -s;
+echo -e "\n";
+git add .;
+echo -e "digite a mensagem do seu commit:\n";
+read mensagem;
+git commit -m "$mensagem";
+echo -e "\n";
+#ou você pode colocar mensagem internamente com:
+# git commit -m "mensagem do commit"
+git push origin master;
+echo -e "\n";
+echo -e "Esse foi o commit feito com o autopush:\n";
+git log -1;
+
